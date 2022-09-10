@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post" action="{% url 'url_inskri' %}">
+  {% csrf_token %}
+  <div style='text-align:center'>
+<div class="form-group">
+  <label for="exampleInputEmail1">Username </label><br>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="aliano2">
+   
+  </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label><br>
+    <input type="email" class="form-control" name="email"  placeholder="alianocharles2000@gmail.com">
+  </div><br>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Password</label><br>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Put a strong password">
+  </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Confirm your password</label><br>
+    <input type="password" class="form-control" name="confpassword"  placeholder="Put the same password ">
+  </div><br>
+  <button type="submit" class="btn btn-primary">Create</button>
+</div>
+  <div style='text-align:center'>
+      
+      <p> Click on if you alredy have an account: <a href="{% url 'url_konekte' %}">Sigin</a></p>
+    </div>
+</form>
+  {% endblock %}
+  
+

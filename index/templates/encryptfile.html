@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    
+
+{% if user.is_authenticated %}
+<div style='color: black; text-align: center;'>
+    <h1>Encrypted File here</h1>
+    
+    <form method="post" action="{% url 'url_encryptfile' %}">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">File name</label><br>
+    <input type="text" class="form-control" name="filename"  placeholder="Put your file here">
+  </div><br>
+<div class="form-group">
+      <label for="exampleInputEmail1">Password</label><br>
+    <input type="password" class="form-control" name="password"  placeholder="Put a strong password">
+  </div><br>
+  <button type="submit" class="btn btn-primary">Encrypt</button>
+</div>
+</form>
+
+    </div>
+{% else %}
+<div style='text-align:center'><p>Access denied click on <a href="{% url 'url_konekte' %}" >Login </a>if you have an account</p></div> 
+</div>
+{% endif %}
+    {% endblock %}
+    
+  

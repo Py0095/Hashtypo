@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    <div style='color: black; text-align: center;'>
+    	<h1>Welcome to hashtypo
+    </div>
+
+{% if user.is_authenticated %}<p style="text-align: center; font-weight: bold;"> Hello {{user.username}} happy to see you!</p>
+<div style='text-align:center'>
+    <div><a href="{% url 'url_continue1' %}">Continue</a></div>
+  <div><a href="{% url 'url_dekonekte' %}" >Logout</a></div>
+</div>
+{% else %}
+<div style='text-align:center'><p><a href="{% url 'url_konekte' %}">Login</a></p>
+</div>
+{% endif %}
+    {% endblock %}
+
+

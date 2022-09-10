@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    <div style='color: black; text-align: center;'>
+    	<h1>What do you want to do?</h1>
+    </div>
+
+{% if user.is_authenticated %}
+<div style='text-align:center'>
+    <div><a href="{% url 'url_encryptfile' %}" >Encrypt or Decrypt a file</a></div>
+  <div><a href="{% url 'url_encryptfolder' %}" >Encrypt or Decrypt a folder</a></div>
+</div>
+{% else %}
+<div style='text-align:center'><p>Access denied click on <a href="{% url 'url_konekte' %}" >Login </a>if you have an account</p></div> 
+</div>
+{% endif %}
+    {% endblock %}
+    
+    

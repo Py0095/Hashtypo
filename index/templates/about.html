@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+    {% block body %}
+    
+
+{% if user.is_authenticated %}
+<div style='color: black; text-align: center;'>
+    	<h1>What is the objectif of Hashtypo</h1>
+    	
+    	
+    	
+    	<h3>Encrypted File Formats
+ WHAT IS AN ENCRYPTED FILE?</h3>
+ <div>
+ <p>
+ An encrypted file is a special type of encoded file that has been encoded using an algorithm to make it difficult for anyone other than the person the file was intended to read.  The field of cryptography aims to create and use algorithms for encoding messages (or any other information) to allow authorized access.</p>
+ </div>
+<div>
+ <p>The algorithm used to encrypt files is commonly known as cipher and uses an encryption key (“private” or “public” key) that can be used to encrypt as well as decrypt information.  The goal is to make the data indecipherable without the key.  Encryption file formats are used to specify the encryption schemes used to encode the file.</p>
+</div>
+ <h3>HOW ARE ENCRYPTED files used?</h3>
+ 
+ <div>
+ <p>
+ Encrypted file formats are commonly used to store and transmit essential information like government secrets, credit card information, passwords, and more.  Most mission critical data is transmitted across the Internet using encryption, such as credit card information during the shopping cart checkout process.
+</p></div>
+<div>
+<p>
+ More recently, web-based messaging services like Gmail and Outlook, and instant messaging services like Skype and WhatsApp, have also started to use encryption when transferring messages over the Internet (and for storing backups).</p>
+ </div>
+    </div>
+{% else %}
+<div style='text-align:center'><p>Access denied click on <a href="{% url 'url_konekte' %}" >Login </a>if you have an account</p></div> 
+</div>
+{% endif %}
+    {% endblock %}

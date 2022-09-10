@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title> {% block title %}{% endblock title %}</title>
+    <meta name="description" content="">
+<style>ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  body {
+  background-color: lightblue;
+}
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+ /* background-color: #111;*/
+}
+
+</style>
+  </head>
+<body>
+{% block header %}
+<ul>
+  <li style='color:white; margin-right: 220px;'><h4>Hashtypo</h4></li>
+  <li style="float:right"><a class="active" href='{% url 'url_home' %}'>home</a></li>
+  <li style="float:right"><a class="active" href='{% url 'url_about' %}'>About</a></li>
+  
+  
+</ul>
+ 
+{% endblock header %}
+
+{% block body %}
+{% endblock body %}
+</body>
+{% block footer %}
+<footer>
+  <div style="color: black; text-align: center; ">
+    <h3>© Copyrigth 2022 </h3>
+  </div>
+
+</footer>
+{% endblock footer %}
+</html>
+
+
+
